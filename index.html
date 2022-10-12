@@ -109,14 +109,14 @@
                     console.log(res)
                     if(valid==0){                        
                         checkValid.innerHTML= "Certificate is Not Valid"
-                        document.getElementById("len").innerHTML = valid
+                        document.getElementById("len").innerHTML = "validity :"+valid
                         status.innerHTML = "X"
                         document.getElementById("s_container").classList.remove("success")
                         document.getElementById("s_container").classList.add("wrong")
                         console.log("error")
                         checkValid.className = "text-danger"
                     }else{
-                        document.getElementById("len").innerHTML = valid
+                        document.getElementById("len").innerHTML = "validity :"+valid
                         userId.innerHTML = "ID : "+res[0].id
                         userName.innerHTML  = "Name : "+res[0].name       
                     }
