@@ -89,13 +89,13 @@
                     let current_url = (window.location.href).toLowerCase();
                     let url = new URL(current_url)
                     let code = url.searchParams.get("id")
+                    document.getElementById("code").innerText=url
                     let res = data.filter(function(item){
                         if(item.id == code){
                             console.log("validated")
                             status.innerHTML = "✓"
                             document.getElementById("s_container").classList.remove("wrong")
                             document.getElementById("s_container").classList.add("success")
-                            document.getElementById("code").innerText=url
                             checkValid.innerHTML= "Certificate is Valid"
                             checkValid.className = "text-success"
                             return item
