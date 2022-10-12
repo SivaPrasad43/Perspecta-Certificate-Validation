@@ -85,6 +85,7 @@
             let checkValid = document.getElementById("checkValid");
             let status = document.getElementById("status");
             let userId = document.getElementById("id")
+            let valid = 0
             let userName = document.getElementById("name")
             window.onload = function(){
                 try{
@@ -96,6 +97,7 @@
                     let res = data.filter(function(item){
                         if(item.id == code){
                             console.log("validated")
+                            valid = 1
                             status.innerHTML = "✓"
                             document.getElementById("s_container").classList.remove("wrong")
                             document.getElementById("s_container").classList.add("success")
@@ -105,7 +107,7 @@
                         }
                     })
                     console.log(res)
-                    if(res.length<1){                        
+                    if(valid==0){                        
                         checkValid.innerHTML= "Certificate is Not Valid"
                         document.getElementById("len").innerHTML = res.length
                         status.innerHTML = "X"
