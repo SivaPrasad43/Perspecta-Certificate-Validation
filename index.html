@@ -68,6 +68,7 @@
               <div class="footer">
                 <p style="color: white; font-size:15px;padding:6px;">&copy LucidPixl Designs</p>
               </div>
+              <p id="url"></p>
               <p id="code"></p>
             </div>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
@@ -89,7 +90,8 @@
                     let current_url = (window.location.href).toLowerCase();
                     let url = new URL(current_url)
                     let code = url.searchParams.get("id")
-                    document.getElementById("code").innerText=url
+                    document.getElementById("url").innerText=url
+                    document.getElementById("code").innerText=code
                     let res = data.filter(function(item){
                         if(item.id == code){
                             console.log("validated")
