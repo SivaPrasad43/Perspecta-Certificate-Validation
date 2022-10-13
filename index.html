@@ -62,8 +62,8 @@
               <i id="status" class="checkmark"></i>
             </div>
               <h1 id="checkValid"></h1> 
-              <p class="id" id="id"></p>
-              <p class="id" id="name"></p>
+              <p id="id"></p>
+              <p id="name"></p>
               <div class="footer">
                 <p style="color: white; font-size:15px;padding:6px;">&copy LucidPixl Designs</p>
               </div>
@@ -113,7 +113,7 @@
                             return item
                         }
                     }
-                    if(valid==0){                        
+                    if(res<=0){                        
                         checkValid.innerHTML= "Certificate is Not Valid"
                         document.getElementById("len").innerHTML = "validity :"+valid
                         status.innerHTML = "X"
