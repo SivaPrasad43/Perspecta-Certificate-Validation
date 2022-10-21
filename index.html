@@ -169,7 +169,6 @@
             let checkValid = document.getElementById("checkValid");
             let status = document.getElementById("status");
             let userId = document.getElementById("id");
-            let valid = 0;
             let userName = document.getElementById("name");
 
             window.onload = function(){
@@ -179,9 +178,8 @@
                     let res = data.filter(FilterItem)
                       
                     function FilterItem(item){
-                      if(item.id == code){
+                      if(item.id == code.toUpperCase()){
                             console.log("validated")
-                            valid = 1
                             status.innerHTML = "✓"
                             document.getElementById("s_container").classList.remove("wrong")
                             document.getElementById("s_container").classList.add("success")
@@ -192,7 +190,6 @@
                     }
                     if(res<=0){                        
                         checkValid.innerHTML= "Certificate is Not Valid"
-                        document.getElementById("len").innerHTML = "validity :"+valid
                         status.innerHTML = "X"
                         document.getElementById("s_container").classList.remove("success")
                         document.getElementById("s_container").classList.add("wrong")
